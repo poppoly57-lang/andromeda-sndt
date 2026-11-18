@@ -1,0 +1,233 @@
+.learning-approach {
+  --approach-black: #050609;
+  --approach-gold: #c49a45;
+  --approach-silver: #bfc2c7;
+  --approach-ivory: #f5f3ee;
+  padding: 112px clamp(28px, 7vw, 108px) 124px;
+  background: #07080b;
+  color: var(--approach-ivory);
+}
+
+.learning-approach-inner {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+}
+
+.learning-approach-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: clamp(56px, 9vw, 140px);
+  align-items: end;
+  margin-bottom: 82px;
+}
+
+.learning-approach-label {
+  margin-bottom: 28px;
+  color: var(--approach-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.learning-approach-heading h2 {
+  max-width: 760px;
+  color: var(--approach-ivory);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(38px, 4.2vw, 60px);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.learning-approach-description {
+  max-width: 580px;
+  padding-bottom: 6px;
+  color: var(--approach-silver);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.learning-approach-principles {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 22px;
+  align-items: stretch;
+}
+
+.approach-principle {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 255px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 34px 36px 36px;
+  overflow: hidden;
+  border: 1px solid rgba(191, 194, 199, 0.13);
+  border-radius: 28px;
+  background: #0b0c10;
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 700ms ease var(--reveal-delay, 0ms),
+    translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms),
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.approach-principle-01 {
+  grid-column: 1 / span 7;
+  background: #0c0d11;
+}
+
+.approach-principle-02 {
+  grid-column: 8 / span 5;
+  min-height: 225px;
+  margin-top: 54px;
+  background: #101115;
+}
+
+.approach-principle-03 {
+  grid-column: 2 / span 5;
+  min-height: 290px;
+  background: #090a0d;
+}
+
+.approach-principle-04 {
+  grid-column: 7 / span 6;
+  min-height: 240px;
+  margin-top: 42px;
+  background: #0e0f13;
+}
+
+.approach-principle-copy {
+  max-width: 520px;
+  padding-top: 36px;
+}
+
+.approach-principle-copy h3 {
+  margin-bottom: 13px;
+  color: var(--approach-ivory);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.approach-principle-copy p {
+  max-width: 500px;
+  color: var(--approach-silver);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.learning-approach:not(.is-visible) .approach-principle {
+  opacity: 0;
+  translate: 0 26px;
+}
+
+.learning-approach.is-visible .approach-principle {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .approach-principle:hover {
+    z-index: 1;
+    border-color: rgba(196, 154, 69, 0.42);
+    background-color: #121317;
+    translate: 0 -4px;
+    transition-delay: 0ms;
+  }
+}
+
+@media (max-width: 900px) {
+  .learning-approach {
+    padding-block: 86px 96px;
+  }
+
+  .learning-approach-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    margin-bottom: 60px;
+  }
+
+  .learning-approach-description {
+    max-width: 680px;
+  }
+
+  .learning-approach-principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .approach-principle,
+  .approach-principle-02,
+  .approach-principle-03,
+  .approach-principle-04 {
+    grid-column: auto;
+    min-height: 250px;
+    margin-top: 0;
+    padding: 28px 25px 30px;
+  }
+
+  .approach-principle-03,
+  .approach-principle-04 {
+    min-height: 270px;
+  }
+
+  .approach-principle-copy {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .learning-approach {
+    padding: 68px 20px 76px;
+  }
+
+  .learning-approach-intro {
+    gap: 19px;
+    margin-bottom: 40px;
+  }
+
+  .learning-approach-label {
+    margin-bottom: 18px;
+  }
+
+  .learning-approach-heading h2 {
+    font-size: 34px;
+  }
+
+  .learning-approach-description {
+    font-size: 15px;
+  }
+
+  .learning-approach-principles {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .approach-principle,
+  .approach-principle-02,
+  .approach-principle-03,
+  .approach-principle-04 {
+    min-height: 0;
+    padding: 25px 23px 27px;
+  }
+
+  .approach-principle-copy {
+    padding-top: 0;
+  }
+
+  .approach-principle-copy h3 {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-approach .approach-principle {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}

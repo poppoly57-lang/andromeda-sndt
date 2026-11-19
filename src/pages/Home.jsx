@@ -1,83 +1,58 @@
 import { Link } from "react-router-dom";
 import LearningApproach from "../components/LearningApproach";
+import ExploreAcademy from "../components/ExploreAcademy";
+import WhyAndromeda from "../components/WhyAndromeda";
 import "../styles/Home.css";
-
-const candles = [
-    { x: 38, high: 125, low: 238, open: 184, close: 203, tone: "silver" },
-    { x: 68, high: 146, low: 251, open: 204, close: 187, tone: "gold" },
-    { x: 98, high: 118, low: 221, open: 188, close: 211, tone: "gold" },
-    { x: 128, high: 139, low: 246, open: 210, close: 194, tone: "silver" },
-    { x: 158, high: 126, low: 228, open: 193, close: 178, tone: "silver" },
-    { x: 188, high: 111, low: 219, open: 179, close: 196, tone: "gold" },
-    { x: 218, high: 137, low: 251, open: 198, close: 181, tone: "silver" },
-    { x: 248, high: 116, low: 227, open: 182, close: 205, tone: "gold" },
-    { x: 278, high: 143, low: 255, open: 204, close: 190, tone: "silver" },
-    { x: 308, high: 129, low: 234, open: 191, close: 213, tone: "gold" },
-    { x: 338, high: 151, low: 260, open: 212, close: 195, tone: "silver" },
-    { x: 368, high: 128, low: 235, open: 196, close: 177, tone: "silver" },
-    { x: 398, high: 112, low: 222, open: 178, close: 197, tone: "gold" },
-    { x: 428, high: 137, low: 249, open: 198, close: 181, tone: "silver" },
-    { x: 458, high: 119, low: 229, open: 182, close: 204, tone: "silver" },
-    { x: 488, high: 145, low: 256, open: 205, close: 189, tone: "gold" },
-    { x: 518, high: 129, low: 239, open: 190, close: 208, tone: "gold" },
-];
-
-function MarketChart() {
-    return (
-        <svg
-            className="market-chart"
-            viewBox="0 0 544 360"
-            role="img"
-            aria-labelledby="chart-title chart-description"
-        >
-            <title id="chart-title">Illustrative forex candlestick chart</title>
-            <desc id="chart-description">
-                A decorative, non-live sequence of gold and silver candlesticks on a fine grid.
-            </desc>
-            <g className="chart-grid" aria-hidden="true">
-                {[64, 128, 192, 256, 320].map((y) => (
-                    <line key={y} x1="0" y1={y} x2="544" y2={y} />
-                ))}
-                {[108, 216, 324, 432].map((x) => (
-                    <line key={x} x1={x} y1="20" x2={x} y2="340" />
-                ))}
-            </g>
-            <g className="chart-candles" aria-hidden="true">
-                {candles.map((candle) => {
-                    const bodyY = Math.min(candle.open, candle.close);
-                    const bodyHeight = Math.max(Math.abs(candle.close - candle.open), 8);
-                    return (
-                        <g className={`candle-${candle.tone}`} key={candle.x}>
-                            <line x1={candle.x} y1={candle.high} x2={candle.x} y2={candle.low} />
-                            <rect x={candle.x - 5} y={bodyY} width="10" height={bodyHeight} />
-                        </g>
-                    );
-                })}
-            </g>
-            <line className="chart-axis" x1="0" y1="340" x2="544" y2="340" />
-        </svg>
-    );
-}
 
 function Home() {
     return (
         <>
             <main className="home-hero">
-                <div className="hero-candle-field" aria-hidden="true">
-                    {Array.from({ length: 16 }, (_, index) => (
-                        <span
-                            className={`field-candle field-candle-${index % 2}`}
-                            key={index}
-                            style={{
-                                left: `${index * 6.4}%`,
-                                top: `${12 + ((index * 23) % 70)}%`,
-                                height: `${34 + ((index * 17) % 38)}px`,
-                                "--field-delay": `${(index % 8) * -1.6}s`,
-                            }}
-                        />
-                    ))}
-                </div>
                 <div className="hero-inner">
+                    <div className="hero-visual" aria-hidden="true">
+                        <img
+                            className="hero-bull"
+                            src="/images/hero/academy-market-bull.jpg"
+                            alt=""
+                            fetchPriority="high"
+                        />
+                        <svg className="hero-globe" viewBox="0 0 520 520" fill="none">
+                            <defs>
+                                <radialGradient id="globe-light" cx="38%" cy="30%" r="72%">
+                                    <stop offset="0" stopColor="#74c8ee" stopOpacity="0.16" />
+                                    <stop offset="1" stopColor="#122e45" stopOpacity="0" />
+                                </radialGradient>
+                                <linearGradient id="globe-line" x1="100" y1="90" x2="420" y2="430">
+                                    <stop stopColor="#b4e5f6" stopOpacity="0.72" />
+                                    <stop offset="0.55" stopColor="#438bb5" stopOpacity="0.38" />
+                                    <stop offset="1" stopColor="#c49a45" stopOpacity="0.58" />
+                                </linearGradient>
+                                <clipPath id="globe-clip">
+                                    <circle cx="260" cy="260" r="190" />
+                                </clipPath>
+                            </defs>
+                            <circle cx="260" cy="260" r="190" fill="url(#globe-light)" />
+                            <circle cx="260" cy="260" r="190" stroke="url(#globe-line)" strokeWidth="1.2" />
+                            <g clipPath="url(#globe-clip)" stroke="url(#globe-line)">
+                                <ellipse cx="260" cy="260" rx="86" ry="190" />
+                                <ellipse cx="260" cy="260" rx="150" ry="190" opacity="0.65" />
+                                <ellipse cx="260" cy="260" rx="190" ry="72" />
+                                <ellipse cx="260" cy="260" rx="190" ry="132" opacity="0.65" />
+                                <path d="M72 260h376M94 174h332M94 346h332" opacity="0.45" />
+                                <path d="M150 154c46 38 84 74 110 106 30 37 62 68 112 106" strokeDasharray="3 8" />
+                                <path d="M132 354c47-69 82-105 128-121 36-12 75-38 117-74" strokeDasharray="2 9" />
+                                <circle cx="180" cy="212" r="3" fill="#d5eff9" />
+                                <circle cx="278" cy="254" r="3" fill="#d5eff9" />
+                                <circle cx="340" cy="316" r="3" fill="#c49a45" />
+                                <circle cx="218" cy="338" r="2.5" fill="#c49a45" />
+                                <circle cx="328" cy="190" r="2.5" fill="#d5eff9" />
+                            </g>
+                            <circle cx="260" cy="260" r="215" stroke="#438bb5" strokeOpacity="0.2" />
+                            <path d="M80 366c75 49 169 73 260 48" stroke="#c49a45" strokeOpacity="0.72" strokeWidth="1.2" />
+                        </svg>
+                        <span className="hero-light hero-light-blue" />
+                        <span className="hero-light hero-light-gold" />
+                    </div>
                     <section className="hero-copy" aria-labelledby="hero-title">
                         <p className="hero-eyebrow">
                             <span /> ANDROMEDA SNDT ACADEMY <i aria-hidden="true">|</i> FOREX EDUCATION
@@ -101,9 +76,6 @@ function Home() {
                                 WATCH LESSONS
                             </Link>
                         </div>
-                    </section>
-                    <section className="hero-chart-wrap" aria-label="Forex education visual">
-                        <MarketChart />
                     </section>
                 </div>
             </main>
@@ -161,6 +133,8 @@ function Home() {
             </section>
 
             <LearningApproach />
+            <ExploreAcademy />
+            <WhyAndromeda />
         </>
     );
 }

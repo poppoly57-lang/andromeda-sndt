@@ -33,7 +33,7 @@ function Navbar() {
     <header className={`navbar${isScrolled ? " scrolled" : ""}`}>
       <NavLink to="/" className="brand" onClick={closeMenu}>
         <img
-          src="/images/andromeda-logo.png"
+          src="/images/branding/andromeda-logo.png"
           alt="Andromeda SNDT Academy logo"
         />
         <span className="brand-name" aria-hidden="true">

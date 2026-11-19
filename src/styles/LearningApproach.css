@@ -4,7 +4,7 @@
   --approach-silver: #bfc2c7;
   --approach-ivory: #f5f3ee;
   padding: 112px clamp(28px, 7vw, 108px) 124px;
-  background: #07080b;
+  background: rgba(7, 8, 11, 0.88);
   color: var(--approach-ivory);
 }
 

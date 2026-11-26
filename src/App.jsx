@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./App.css";
 
 import Home from "./pages/Home";
-import Academy from "./pages/academy.jsx";
+import Academy from "./pages/Academy.jsx";
 import Videos from "./pages/Videos.jsx";
 import Resources from "./pages/Resources.jsx";
 import About from "./pages/About.jsx";
@@ -56,6 +57,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

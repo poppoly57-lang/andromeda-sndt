@@ -1,0 +1,566 @@
+.technical-analysis {
+  --technical-black: #050609;
+  --technical-midnight: #09121b;
+  --technical-ivory: #f5f3ee;
+  --technical-silver: #bfc2c7;
+  --technical-gold: #c49a45;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(92px, 10vw, 138px) clamp(24px, 7vw, 108px) clamp(104px, 11vw, 150px);
+  background:
+    radial-gradient(ellipse at 51% 49%, rgba(32, 57, 72, 0.22), transparent 49%),
+    linear-gradient(180deg, #080b10 0%, #0a1016 49%, #07090d 100%);
+  color: var(--technical-ivory);
+}
+
+.technical-analysis::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(191, 194, 199, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(191, 194, 199, 0.022) 1px, transparent 1px);
+  background-size: 112px 112px;
+  content: "";
+  mask-image: radial-gradient(ellipse at center, #000 0, transparent 76%);
+  pointer-events: none;
+}
+
+.technical-analysis-inner {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+}
+
+.technical-analysis-intro {
+  max-width: 860px;
+  margin: 0 auto clamp(56px, 7vw, 92px);
+  text-align: center;
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity 680ms ease, translate 680ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.technical-analysis-eyebrow {
+  margin-bottom: 20px;
+  color: var(--technical-gold);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+
+.technical-analysis-intro h2 {
+  color: var(--technical-ivory);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(40px, 4.6vw, 64px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.technical-analysis-lede {
+  max-width: 710px;
+  margin: 21px auto 0;
+  color: rgba(191, 194, 199, 0.88);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.technical-analysis-layout {
+  display: grid;
+  grid-template-columns: minmax(165px, 0.72fr) minmax(0, 3fr) minmax(190px, 0.82fr);
+  align-items: center;
+  gap: clamp(18px, 2.8vw, 42px);
+}
+
+.technical-concepts {
+  display: grid;
+  min-width: 0;
+}
+
+.technical-concepts-left {
+  align-content: center;
+  gap: clamp(48px, 6vw, 86px);
+}
+
+.technical-concepts-right {
+  align-content: center;
+  gap: clamp(25px, 3.2vw, 46px);
+}
+
+.technical-concept {
+  min-width: 0;
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 650ms ease var(--concept-delay, 0ms),
+    translate 650ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--concept-delay, 0ms);
+}
+
+.technical-concept h3 {
+  max-width: 260px;
+  color: var(--technical-ivory);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.technical-concept p {
+  max-width: 290px;
+  margin-top: 8px;
+  color: rgba(191, 194, 199, 0.78);
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.technical-concept-detail {
+  display: flex;
+  min-height: 25px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.technical-concept:nth-child(odd) h3 {
+  color: #e6d7b5;
+}
+
+.concept-candles .concept-candle-key {
+  display: flex;
+  height: 23px;
+  align-items: center;
+  gap: 7px;
+}
+
+.concept-candle-key i {
+  position: relative;
+  display: block;
+  width: 7px;
+  height: 13px;
+  background: rgba(196, 154, 69, 0.48);
+}
+
+.concept-candle-key i::before {
+  position: absolute;
+  top: -5px;
+  left: 3px;
+  width: 1px;
+  height: 23px;
+  background: rgba(196, 154, 69, 0.72);
+  content: "";
+}
+
+.concept-candle-key i:nth-child(even) {
+  height: 9px;
+  background: rgba(191, 194, 199, 0.46);
+}
+
+.concept-candle-key i:nth-child(even)::before {
+  background: rgba(191, 194, 199, 0.68);
+}
+
+.concept-direction-key {
+  display: flex;
+  gap: 10px;
+}
+
+.concept-direction-key i {
+  color: rgba(191, 194, 199, 0.7);
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.concept-direction-key i:first-child { color: #c8d0c8; }
+.concept-direction-key i:last-child { color: #d3b16c; }
+
+.concept-level-key {
+  display: grid;
+  width: min(100%, 110px);
+  gap: 7px;
+}
+
+.concept-level-key i {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(196, 154, 69, 0.78), rgba(196, 154, 69, 0.16));
+}
+
+.concept-level-key i:last-child {
+  width: 78%;
+  background: linear-gradient(90deg, rgba(191, 194, 199, 0.6), rgba(191, 194, 199, 0.12));
+}
+
+.concept-pattern-key {
+  display: flex;
+  height: 22px;
+  align-items: end;
+  gap: 7px;
+}
+
+.concept-pattern-key i {
+  width: 14px;
+  height: 7px;
+  border-top: 1px solid rgba(191, 194, 199, 0.7);
+  transform: skewY(-24deg);
+}
+
+.concept-pattern-key i:nth-child(even) {
+  align-self: flex-start;
+  margin-top: 4px;
+  border-color: rgba(196, 154, 69, 0.78);
+  transform: skewY(24deg);
+}
+
+.concept-indicator-key {
+  display: flex;
+  height: 22px;
+  align-items: center;
+  gap: 5px;
+}
+
+.concept-indicator-key i {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: rgba(191, 194, 199, 0.7);
+  transform: rotate(-24deg);
+}
+
+.concept-indicator-key i:nth-child(2) {
+  width: 24px;
+  background: rgba(196, 154, 69, 0.86);
+  transform: rotate(12deg);
+}
+
+.concept-indicator-key i:nth-child(3) {
+  width: 16px;
+  transform: rotate(-12deg);
+}
+
+.technical-chart-figure {
+  min-width: 0;
+  margin: 0;
+  opacity: 1;
+  scale: 1;
+  transition: opacity 800ms ease 100ms, scale 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms;
+}
+
+.technical-chart-frame {
+  position: relative;
+  padding: 18px 17px 15px;
+  background:
+    linear-gradient(140deg, rgba(17, 26, 34, 0.88), rgba(8, 12, 17, 0.7)),
+    var(--technical-black);
+}
+
+.technical-chart-heading,
+.technical-chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(191, 194, 199, 0.61);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.technical-chart-heading span:first-child {
+  color: rgba(245, 243, 238, 0.78);
+}
+
+.technical-chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 6px;
+  overflow: visible;
+}
+
+.technical-chart-grid {
+  fill: none;
+  stroke: rgba(191, 194, 199, 0.11);
+  stroke-width: 0.8;
+}
+
+.technical-chart-area {
+  fill: url(#technical-chart-wash);
+}
+
+.technical-chart-trace {
+  fill: none;
+  stroke: url(#technical-chart-rise);
+  stroke-width: 1.25;
+  stroke-dasharray: 4 7;
+}
+
+.technical-reaction-zone path {
+  fill: none;
+  stroke: rgba(196, 154, 69, 0.42);
+  stroke-width: 1;
+  stroke-dasharray: 3 6;
+}
+
+.technical-reaction-zone path + path {
+  stroke: rgba(196, 154, 69, 0.14);
+  stroke-dasharray: none;
+}
+
+.technical-candle line {
+  stroke-width: 1.25;
+}
+
+.technical-candle rect {
+  stroke-width: 0.8;
+}
+
+.technical-candle.candle-up line,
+.technical-candle.candle-up rect {
+  stroke: rgba(168, 187, 172, 0.78);
+}
+
+.technical-candle.candle-up rect {
+  fill: rgba(132, 164, 144, 0.24);
+}
+
+.technical-candle.candle-down line,
+.technical-candle.candle-down rect {
+  stroke: rgba(196, 154, 69, 0.78);
+}
+
+.technical-candle.candle-down rect {
+  fill: rgba(196, 154, 69, 0.2);
+}
+
+.technical-chart-baseline {
+  fill: none;
+  stroke: rgba(191, 194, 199, 0.24);
+  stroke-width: 1;
+}
+
+.technical-chart-labels {
+  fill: rgba(211, 177, 108, 0.77);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.technical-chart-markers circle {
+  fill: #d3b16c;
+  opacity: 0.76;
+}
+
+.technical-chart-legend {
+  justify-content: flex-start;
+  gap: clamp(12px, 2vw, 26px);
+  margin-top: 3px;
+  font-size: 8px;
+}
+
+.technical-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.technical-chart-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 7px;
+}
+
+.legend-candle {
+  border: 1px solid rgba(168, 187, 172, 0.72);
+  background: rgba(132, 164, 144, 0.22);
+}
+
+.legend-area {
+  height: 1px !important;
+  background: rgba(196, 154, 69, 0.6);
+}
+
+.technical-chart-figure figcaption {
+  margin-top: 11px;
+  color: rgba(191, 194, 199, 0.55);
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.technical-analysis:not(.is-visible) .technical-analysis-intro,
+.technical-analysis:not(.is-visible) .technical-concept {
+  opacity: 0;
+  translate: 0 16px;
+}
+
+.technical-analysis:not(.is-visible) .technical-chart-figure {
+  opacity: 0;
+  scale: 0.985;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .technical-concept:hover {
+    translate: 3px 0;
+  }
+
+  .technical-concept:hover h3 {
+    color: #e2c47f;
+  }
+}
+
+@media (max-width: 1060px) {
+  .technical-analysis-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 34px 30px;
+  }
+
+  .technical-chart-figure {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: min(100%, 880px);
+    justify-self: center;
+  }
+
+  .technical-concepts-left,
+  .technical-concepts-right {
+    display: contents;
+  }
+
+  .technical-concept {
+    padding: 4px 8px 0;
+  }
+
+  .technical-concept h3 {
+    font-size: 20px;
+  }
+
+  .technical-concept p {
+    max-width: 400px;
+    font-size: 14px;
+  }
+
+  .technical-concept:nth-child(1) { grid-column: 1; grid-row: 2; }
+  .technical-concept:nth-child(2) { grid-column: 2; grid-row: 2; }
+  .technical-concept:nth-child(3) { grid-column: 1; grid-row: 3; }
+  .technical-concept:nth-child(4) { grid-column: 2; grid-row: 3; }
+  .technical-concept:nth-child(5) { grid-column: 1 / -1; grid-row: 4; }
+}
+
+@media (max-width: 620px) {
+  .technical-analysis {
+    padding: 76px 20px 88px;
+  }
+
+  .technical-analysis-intro {
+    margin-bottom: 38px;
+    text-align: left;
+  }
+
+  .technical-analysis-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .technical-analysis-intro h2 {
+    font-size: clamp(36px, 8vw, 44px);
+  }
+
+  .technical-analysis-lede {
+    margin: 16px 0 0;
+    font-size: 14px;
+  }
+
+  .technical-analysis-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 27px;
+  }
+
+  .technical-chart-figure {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+  }
+
+  .technical-concept:nth-child(1),
+  .technical-concept:nth-child(2),
+  .technical-concept:nth-child(3),
+  .technical-concept:nth-child(4),
+  .technical-concept:nth-child(5) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .technical-concept {
+    padding: 0 0 0 15px;
+    border-left: 1px solid rgba(196, 154, 69, 0.28);
+  }
+
+  .technical-concept h3 {
+    max-width: 340px;
+    font-size: 21px;
+  }
+
+  .technical-concept p {
+    max-width: 460px;
+    margin-top: 7px;
+    font-size: 14px;
+  }
+
+  .technical-concept-detail {
+    margin-bottom: 7px;
+  }
+
+  .technical-chart-frame {
+    padding: 14px 10px 12px;
+  }
+
+  .technical-chart-heading {
+    font-size: 8px;
+  }
+
+  .technical-chart-legend {
+    gap: 10px;
+    font-size: 8px;
+  }
+
+  .technical-chart-legend span {
+    gap: 4px;
+  }
+
+  .technical-chart-svg {
+    margin-top: 13px;
+  }
+
+  .technical-chart-labels {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .technical-chart-heading span:last-child {
+    font-size: 7px;
+  }
+
+  .technical-chart-legend {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technical-analysis-intro,
+  .technical-concept,
+  .technical-chart-figure {
+    opacity: 1;
+    translate: none;
+    scale: 1;
+    transition: none;
+  }
+}

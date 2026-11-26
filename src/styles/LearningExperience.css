@@ -1,0 +1,366 @@
+.learning-experience {
+  --experience-black: #050609;
+  --experience-blue: #0a1118;
+  --experience-gold: #c49a45;
+  --experience-silver: #bfc2c7;
+  --experience-ivory: #f5f3ee;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 116px clamp(26px, 7vw, 108px) 128px;
+  background:
+    radial-gradient(ellipse at 18% 66%, rgba(23, 49, 67, 0.32), transparent 40%),
+    linear-gradient(118deg, #050609 10%, #080c11 68%, #050609 100%);
+  color: var(--experience-ivory);
+}
+
+.learning-experience::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(5, 6, 9, 0.12), transparent 52%, rgba(5, 6, 9, 0.32));
+  content: "";
+  pointer-events: none;
+}
+
+.learning-experience-inner {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+}
+
+.learning-experience-intro {
+  max-width: 920px;
+  margin-bottom: 58px;
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 700ms ease,
+    translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.learning-experience-eyebrow {
+  margin-bottom: 20px;
+  color: var(--experience-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.learning-experience-intro h2 {
+  max-width: 900px;
+  color: var(--experience-ivory);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(40px, 4.6vw, 64px);
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.learning-experience-description {
+  max-width: 680px;
+  margin-top: 21px;
+  color: var(--experience-silver);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.learning-experience-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
+  align-items: center;
+  gap: clamp(38px, 6vw, 88px);
+}
+
+.learning-experience-feature {
+  position: relative;
+  min-width: 0;
+  min-height: 560px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 55% 40%, rgba(43, 82, 108, 0.22), transparent 55%),
+    var(--experience-blue);
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 850ms ease 100ms,
+    translate 850ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms;
+}
+
+.learning-experience-feature::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(0deg, rgba(5, 6, 9, 0.86) 0%, rgba(5, 6, 9, 0.12) 35%, transparent 68%),
+    linear-gradient(90deg, rgba(5, 6, 9, 0.12), transparent 65%);
+  content: "";
+  pointer-events: none;
+}
+
+.learning-experience-feature img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% center;
+  filter: saturate(0.68) brightness(0.72) contrast(1.08);
+  mask-image: linear-gradient(180deg, #000 65%, rgba(0, 0, 0, 0.82) 82%, transparent 100%);
+  transition: transform 900ms cubic-bezier(0.2, 0.65, 0.2, 1), filter 600ms ease;
+}
+
+.learning-experience-feature figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 28px;
+  bottom: 28px;
+  left: 28px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--experience-ivory);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.learning-experience-feature figcaption span:first-child {
+  color: #e0bd77;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.learning-experience-feature figcaption span:last-child {
+  color: rgba(245, 243, 238, 0.72);
+}
+
+.learning-experience-list {
+  display: grid;
+  gap: 28px;
+  min-width: 0;
+}
+
+.learning-experience-item {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 122px minmax(0, 1fr);
+  align-items: center;
+  gap: 23px;
+  color: inherit;
+  text-decoration: none;
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 700ms ease var(--experience-delay, 0ms),
+    translate 700ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--experience-delay, 0ms);
+}
+
+.learning-experience-item:focus-visible {
+  outline: 2px solid var(--experience-gold);
+  outline-offset: 7px;
+}
+
+.learning-experience-media {
+  position: relative;
+  display: block;
+  width: 122px;
+  height: 104px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0a1118;
+}
+
+.learning-experience-media::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 6, 9, 0.05), rgba(5, 6, 9, 0.54));
+  content: "";
+}
+
+.learning-experience-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.62) brightness(0.78);
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.2, 1), filter 450ms ease;
+}
+
+.learning-experience-icon {
+  position: absolute;
+  z-index: 1;
+  right: 9px;
+  bottom: 9px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  background: rgba(5, 6, 9, 0.8);
+  color: #e0bd77;
+}
+
+.learning-experience-copy {
+  display: grid;
+  justify-items: start;
+  gap: 7px;
+  min-width: 0;
+}
+
+.learning-experience-item-title {
+  color: var(--experience-ivory);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+  transition: color 220ms ease;
+}
+
+.learning-experience-item-description {
+  color: var(--experience-silver);
+    font-size: 13px;
+  line-height: 1.7;
+}
+
+.learning-experience-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  color: #d3b16c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.learning-experience-action svg {
+  transition: transform 220ms ease;
+}
+
+.learning-experience:not(.is-visible) .learning-experience-intro,
+.learning-experience:not(.is-visible) .learning-experience-feature,
+.learning-experience:not(.is-visible) .learning-experience-item {
+  opacity: 0;
+  translate: 0 20px;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .learning-experience-item:hover .learning-experience-media img {
+    filter: saturate(0.82) brightness(0.9);
+    transform: scale(1.045);
+  }
+
+  .learning-experience-item:hover .learning-experience-item-title {
+    color: #e0bd77;
+  }
+
+  .learning-experience-item:hover .learning-experience-action svg {
+    transform: translate(2px, -2px);
+  }
+
+  .learning-experience-feature:hover img {
+    filter: saturate(0.78) brightness(0.8) contrast(1.08);
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 960px) {
+  .learning-experience {
+    padding-block: 92px 100px;
+  }
+
+  .learning-experience-layout {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 34px;
+  }
+
+  .learning-experience-feature {
+    min-height: 510px;
+  }
+
+  .learning-experience-item {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .learning-experience-media {
+    width: 100px;
+    height: 96px;
+  }
+}
+
+@media (max-width: 700px) {
+  .learning-experience {
+    padding: 76px 22px 82px;
+  }
+
+  .learning-experience-intro {
+    margin-bottom: 38px;
+  }
+
+  .learning-experience-intro h2 {
+    font-size: 38px;
+  }
+
+  .learning-experience-description {
+    margin-top: 17px;
+    font-size: 15px;
+  }
+
+  .learning-experience-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 33px;
+  }
+
+  .learning-experience-feature {
+    min-height: 0;
+    aspect-ratio: 1.2 / 1;
+  }
+
+  .learning-experience-list {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .learning-experience {
+    padding-inline: 20px;
+  }
+
+  .learning-experience-intro h2 {
+    font-size: 32px;
+  }
+
+  .learning-experience-feature {
+    aspect-ratio: 1 / 0.92;
+  }
+
+  .learning-experience-feature figcaption {
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+  }
+
+  .learning-experience-item {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .learning-experience-media {
+    width: 88px;
+    height: 90px;
+  }
+
+  .learning-experience-item-description {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-experience-intro,
+  .learning-experience-feature,
+  .learning-experience-item,
+  .learning-experience-media img,
+  .learning-experience-feature img,
+  .learning-experience-action svg {
+    transition: none;
+  }
+}

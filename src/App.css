@@ -124,7 +124,7 @@
   flex-direction: column;
   gap: 4px;
   color: #f5f3ee;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   line-height: 1;
   font-family: 'roboto', sans-serif;
@@ -132,7 +132,7 @@
 
 .brand-name span:last-child {
   color: #bfc2c7;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   font-family: 'roboto', sans-serif;
 }
@@ -148,7 +148,7 @@
   padding: 10px 0;
   color: #bfc2c7;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   font-family: 'roboto', sans-serif;
   transition: color 180ms ease;
@@ -185,7 +185,7 @@
   background: #c49a45;
   text-decoration: none;
   color: #050609;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 28px;
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
@@ -265,7 +265,7 @@
 
   .nav-link {
     padding: 12px 0;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .nav-link::after {
@@ -317,11 +317,11 @@
   }
 
   .brand-name {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .brand-name span:last-child {
-    font-size: 8px;
+    font-size: 9px;
   }
 
   .menu-toggle {

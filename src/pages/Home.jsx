@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import LearningApproach from "../components/LearningApproach";
 import ExploreAcademy from "../components/ExploreAcademy";
 import WhyAndromeda from "../components/WhyAndromeda";
+import LearningExperience from "../components/LearningExperience";
+import AcademyMessage from "../components/AcademyMessage";
+import LearningResources from "../components/LearningResources";
+import StartExploring from "../components/StartExploring";
 import "../styles/Home.css";
 
 function Home() {
@@ -135,6 +139,10 @@ function Home() {
             <LearningApproach />
             <ExploreAcademy />
             <WhyAndromeda />
+            <LearningExperience />
+            <AcademyMessage />
+            <LearningResources />
+            <StartExploring />
         </>
     );
 }
